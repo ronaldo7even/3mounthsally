@@ -1,0 +1,118 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #020101, #383737);
+  overflow: auto; /* Permite a rolagem no corpo */
+}
+
+h1 {
+  text-align: center;
+  color: #afafaf;
+  margin: 20px 0;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto; /* Permite rolagem vertical na galeria */
+  height: calc(100vh - 100px); /* Ajuste a altura para permitir a rolagem */
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column; /* Para que as fotos fiquem uma embaixo da outra */
+  align-items: center; /* Centraliza as fotos */
+  gap: 26px; /* Espaçamento entre as fotos */
+}
+
+.photo {
+  background: rgb(187, 187, 187);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px; /* Largura da foto */
+  transition: transform 0.3s;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Mantém a cor do texto */
+  padding: 5px; /* Diminuindo o espaço do clique */
+}
+
+.photo:hover {
+  transform: scale(1.05);
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.photo p {
+  font-size: 1em;
+  color: #555;
+  padding: 10px;
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos para os corações caindo */
+.falling-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite interação com elementos abaixo */
+  overflow: hidden; /* Oculta os corações que saem da tela */
+}
+
+.heart {
+  position: absolute;
+  width: 20px; /* Largura do coração */
+  height: 20px; /* Altura do coração */
+  background: url('../src/coracao-png.webp') no-repeat center; /* Caminho ajustado */
+  background-size: contain; /* Ajusta o tamanho do fundo */
+  animation: fall linear forwards; /* Animação de queda */
+}
+
+/* Animação de queda dos corações */
+@keyframes fall {
+  0% {
+      transform: translateY(-50px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh); /* Cai até o fundo da página */
+      opacity: 0; /* Desaparece ao cair */
+  }
+}
+
+.button-container {
+  text-align: center; /* Centraliza o botão na página */
+  margin-top: 20px; /* Espaçamento acima do botão */
+  margin: 30px 0 30px 0;
+}
+
+img {
+
+  border-radius: 6px;
+}
+
+.button-link {
+  display: inline-block; /* Faz o link se comportar como um bloco */
+  background-color: #080608; /* Cor de fundo do botão */
+  color: rgb(255, 255, 255); /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado do link */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s, transform 0.3s; /* Transições suaves ao passar o mouse */
+}
+
+.button-link:hover {
+  background-color: #7b777c; /* Cor de fundo ao passar o mouse */
+  transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+

@@ -1,0 +1,114 @@
+
+body {
+    font-family: cursive;
+    background-color: #181617;
+   
+  }
+.envelope-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #181617;
+}
+
+.envelope {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background-color: #8f7941;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #4d3614;
+    border-radius: 10px 10px 0 0;
+    transform-origin: top center;
+    animation: openFlap 2s forwards;
+}
+
+.letter {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 600px;
+    /* Aumenta a largura da carta */
+    height: 220px;
+    /* Aumenta a altura da carta */
+    padding: 20px;
+    /* Aumenta o espaço interno para o texto */
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: revealLetter 2s forwards 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.letter p {
+    font-size: 1.2em;
+    color: #333;
+    text-align: justify;
+    /* Justifica o texto para melhor legibilidade */
+    margin-bottom: 20px;
+    line-height: 1;
+    /* Ajusta o espaçamento entre as linhas */
+    text-align: start;
+}
+
+
+.letter button {
+    padding: 5px 4px 5px 5px; /* Ajusta o espaçamento interno (10px em cima e embaixo, 20px nos lados) */
+    background-color: #d6d467;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Apenas as pontas arredondadas */
+    width: 215px; /* Define uma largura fixa para o fundo verde */
+    height: auto; /* Altura automática para o conteúdo */
+    margin-left: 0; /* Alinha mais para a esquerda */
+    text-align: center; /* Garante que o texto esteja centralizado dentro do botão */
+    font-size: 1em; /* Tamanho da fonte para manter o texto legível */
+    white-space: nowrap; /* Impede que o texto quebre em múltiplas linhas */
+    overflow: hidden; /* Oculta o texto que não cabe */
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  
+  .letter button:hover {
+    background-color: #a19810; /* Cor ao passar o mouse */
+  }
+  
+  
+  
+
+@keyframes openFlap {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(-180deg);
+    }
+}
+
+@keyframes revealLetter {
+    0% {
+        top: 50%;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
